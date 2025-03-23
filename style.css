@@ -1,0 +1,14 @@
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: hsla(0, 0%, 7%, 0.644);
+  color: white;
+  max-width: 100%;
+  height: 100%;
+}
+
+canvas {
+  background-color: #000000;
+  border-radius: 8px;
+}
