@@ -2,7 +2,7 @@ class World {
   character = new Character();
   anamies = [new Chicken(), new Chicken(), new Chicken()];
   clouds = [new Cloud()];
-  backgrounds = [new Background('images/5_background/layers/3_third_layer/1.png', 12, 50)];
+  backgrounds = [new Background('images/5_background/layers/air.png'), new Background('images/5_background/layers/3_third_layer/1.png', 12, 50), new Background('images/5_background/layers/2_second_layer/1.png', 0, 560), new Background('images/5_background/layers/1_first_layer/1.png', 0, 490)];
   ctx;
   canvas;
   constructor(canvas) {
