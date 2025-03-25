@@ -8,6 +8,7 @@ class World {
   constructor(canvas) {
     this.ctx = canvas.getContext('2d');
     this.canvas = canvas;
+
     this.draw();
   }
 

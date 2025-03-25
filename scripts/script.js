@@ -3,6 +3,8 @@ let world;
 
 function init() {
   canvas = document.getElementById('canvas');
+  /* canvas.width = 800;
+  canvas.height = 600; */
 
   world = new World(canvas);
 
