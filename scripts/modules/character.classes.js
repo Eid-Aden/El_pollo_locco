@@ -1,7 +1,7 @@
 class Character extends MoveableObject {
   width = 250;
-  height = 100;
-  position_Y = 170;
+  height = 90;
+  position_Y = 140;
   warkingImag = ['images/2_character_pepe/2_walk/W-21.png', 'images/2_character_pepe/2_walk/W-22.png', 'images/2_character_pepe/2_walk/W-23.png', 'images/2_character_pepe/2_walk/W-24.png', 'images/2_character_pepe/2_walk/W-25.png', 'images/2_character_pepe/2_walk/W-26.png'];
   carruntImage = 0;
   constructor() {
