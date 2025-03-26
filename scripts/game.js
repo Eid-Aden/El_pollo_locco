@@ -5,26 +5,46 @@ let keyboard = new Keyboard();
 function init() {
   canvas = document.getElementById('canvas');
 
-  world = new World(canvas);
+  world = new World(canvas, keyboard);
 
   console.log('meine Characte  ist MoveableObject', world.character);
 }
 
 window.addEventListener('keydown', (event) => {
-  if ((KeyboardEvent.keyCode = 39)) {
-    keyboard.Right = true;
+  if (event.keyCode === 39) {
+    keyboard.RIGHT = true;
   }
-  if ((KeyboardEvent.keyCode = 38)) {
-    keyboard.Up = true;
+  if (event.keyCode === 37) {
+    keyboard.LEFT = true;
   }
-  if ((KeyboardEvent.keyCode = 37)) {
-    keyboard.Left = true;
+  if (event.keyCode === 38) {
+    keyboard.UP = true;
   }
-  if ((KeyboardEvent.keyCode = 40)) {
-    keyboard.Down = true;
+  if (event.keyCode === 40) {
+    keyboard.DOWN = true;
   }
-  if ((KeyboardEvent.keyCode = 32)) {
-    keyboard.Space = true;
+  if (event.keyCode === 32) {
+    keyboard.SPACE = true;
+  }
+
+  console.log(event);
+});
+
+window.addEventListener('keyup', (event) => {
+  if (event.keyCode === 39) {
+    keyboard.RIGHT = false;
+  }
+  if (event.keyCode === 37) {
+    keyboard.LEFT = false;
+  }
+  if (event.keyCode === 38) {
+    keyboard.UP = false;
+  }
+  if (event.keyCode === 40) {
+    keyboard.DOWN = false;
+  }
+  if (event.keyCode === 32) {
+    keyboard.SPACE = false;
   }
 
   console.log(event);
