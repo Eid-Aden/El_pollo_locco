@@ -7,6 +7,7 @@ class MoveableObject {
   speed = 0.15;
   otherDerections = false;
   imageCache = {};
+  currentImage = 0; // Korrekte Schreibweise hinzufügen!
   loadImage(path) {
     this.img = new Image();
     this.img.src = path;
@@ -22,6 +23,14 @@ class MoveableObject {
       img.src = path;
       this.imageCache[path] = img;
     });
+  }
+  playAnimation(images) {
+    /*   let i = this.carruntImage % this.walkingImage.length; */
+    let i = this.currentImage % images.length;
+    //Sawirada  Character  iyo  Animations  ku Xeeran  waa farsamada lagu Dhaqaajiyo!
+    let path = images[i];
+    this.img = this.imageCache[path];
+    this.currentImage++;
   }
 
   moveRight() {}

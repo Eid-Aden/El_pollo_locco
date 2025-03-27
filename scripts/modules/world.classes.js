@@ -1,38 +1,7 @@
 class World {
   character = new Character();
-  anamies = [new Chicken(), new Chicken(), new Chicken()];
-  clouds = [new Cloud()];
-  backgrounds = [
-    new Background('images/5_background/layers/air.png', -719),
-    new Background('images/5_background/layers/3_third_layer/full.png', -719),
-    new Background('images/5_background/layers/2_second_layer/full.png', -719),
-    new Background('images/5_background/layers/1_first_layer/full.png', -719),
-    // Kordhin
-    new Background('images/5_background/layers/air.png', 0),
-    new Background('images/5_background/layers/3_third_layer/1.png', 0),
-    new Background('images/5_background/layers/2_second_layer/1.png', 0),
-    new Background('images/5_background/layers/1_first_layer/1.png', 0),
+  level = level1;
 
-    new Background('images/5_background/layers/air.png', 719),
-    new Background('images/5_background/layers/3_third_layer/2.png', 719),
-    new Background('images/5_background/layers/2_second_layer/2.png', 719),
-    new Background('images/5_background/layers/1_first_layer/2.png', 719),
-
-    new Background('images/5_background/layers/air.png', 719 * 2),
-    new Background('images/5_background/layers/3_third_layer/2.png', 719 * 2),
-    new Background('images/5_background/layers/2_second_layer/2.png', 719 * 2),
-    new Background('images/5_background/layers/1_first_layer/2.png', 719 * 2),
-
-    new Background('images/5_background/layers/air.png', 719 * 4),
-    new Background('images/5_background/layers/3_third_layer/2.png', 719 * 4),
-    new Background('images/5_background/layers/2_second_layer/2.png', 719 * 4),
-    new Background('images/5_background/layers/1_first_layer/2.png', 719 * 4),
-
-    new Background('images/5_background/layers/air.png', 719 * 3),
-    new Background('images/5_background/layers/3_third_layer/2.png', 719 * 3),
-    new Background('images/5_background/layers/2_second_layer/2.png', 719 * 3),
-    new Background('images/5_background/layers/1_first_layer/2.png', 719 * 3),
-  ];
   ctx;
   canvas;
   keyboard;
@@ -54,10 +23,10 @@ class World {
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.ctx.translate(this.camara_X, 0);
 
-    this.addObjectsToMap(this.backgrounds);
+    this.addObjectsToMap(this.level.backgrounds);
     this.addMap(this.character);
-    this.addObjectsToMap(this.clouds);
-    this.addObjectsToMap(this.anamies);
+    this.addObjectsToMap(this.level.clouds);
+    this.addObjectsToMap(this.level.anamies);
     this.ctx.translate(-this.camara_X, 0);
 
     //this shows  every second more than 26 times  Images that so we cont able to see black  canvas--
