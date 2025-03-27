@@ -1,7 +1,7 @@
 class Chicken extends MoveableObject {
   width = 65;
   height = 75;
-  position_Y = 330;
+  position_Y = 300;
   walkingImage = ['images/3_enemies_chicken/chicken_normal/1_walk/1_w.png', 'images/3_enemies_chicken/chicken_normal/1_walk/2_w.png', 'images/3_enemies_chicken/chicken_normal/1_walk/3_w.png'];
   carruntImage = 0;
   constructor() {

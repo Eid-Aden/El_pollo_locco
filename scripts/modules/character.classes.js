@@ -1,8 +1,27 @@
 class Character extends MoveableObject {
   width = 250;
   height = 90;
-  position_Y = 150;
-  walkingImage = ['images/2_character_pepe/2_walk/W-21.png', 'images/2_character_pepe/2_walk/W-22.png', 'images/2_character_pepe/2_walk/W-23.png', 'images/2_character_pepe/2_walk/W-24.png', 'images/2_character_pepe/2_walk/W-25.png', 'images/2_character_pepe/2_walk/W-26.png'];
+  position_Y = 80;
+  walkingImage = [
+    'images/2_character_pepe/2_walk/W-21.png',
+    'images/2_character_pepe/2_walk/W-22.png',
+    'images/2_character_pepe/2_walk/W-23.png',
+    'images/2_character_pepe/2_walk/W-24.png',
+    'images/2_character_pepe/2_walk/W-25.png',
+    'images/2_character_pepe/2_walk/W-26.png',
+  ];
+
+  JumpingImages = [
+    'images/2_character_pepe/3_jump/J-31.png',
+    'images/2_character_pepe/3_jump/J-32.png',
+    'images/2_character_pepe/3_jump/J-33.png',
+    'images/2_character_pepe/3_jump/J-34.png',
+    'images/2_character_pepe/3_jump/J-35.png',
+    'images/2_character_pepe/3_jump/J-36.png',
+    'images/2_character_pepe/3_jump/J-37.png',
+    'images/2_character_pepe/3_jump/J-38.png',
+    'images/2_character_pepe/3_jump/J-39.png',
+  ];
   carruntImage = 0;
   world;
   speed = 10;
@@ -10,6 +29,8 @@ class Character extends MoveableObject {
     super();
     this.loadImage('images/2_character_pepe/2_walk/W-21.png');
     this.loadImages(this.walkingImage);
+    this.loadImages(this.JumpingImages);
+    this.appyCravity();
     this.animate();
   }
 
@@ -28,7 +49,13 @@ class Character extends MoveableObject {
     }, 1000 / 60);
 
     setInterval(() => {
-      this.playAnimation(this.walkingImage);
+      if (this.isaboveGround()) {
+        this.playAnimation(this.JumpingImages);
+      } else {
+        if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
+          this.playAnimation(this.walkingImage);
+        }
+      }
     }, 200);
   }
 

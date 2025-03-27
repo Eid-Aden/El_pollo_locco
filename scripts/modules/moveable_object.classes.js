@@ -1,6 +1,8 @@
 class MoveableObject {
   position_X = 120;
   position_Y = 200;
+  speedY = 0;
+  accelaration = 1;
   img;
   height = 150;
   width = 150;
@@ -11,6 +13,17 @@ class MoveableObject {
   loadImage(path) {
     this.img = new Image();
     this.img.src = path;
+  }
+  appyCravity() {
+    setInterval(() => {
+      if (this.isaboveGround()) {
+        this.position_Y -= this.speedY;
+        this.speedY -= this.accelaration;
+      }
+    }, 1000 / 25);
+  }
+  isaboveGround() {
+    return this.position_Y < 130;
   }
   /**
    *
