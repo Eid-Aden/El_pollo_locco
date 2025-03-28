@@ -16,7 +16,7 @@ class MoveableObject {
   }
   appyCravity() {
     setInterval(() => {
-      if (this.isaboveGround()) {
+      if (this.isaboveGround() || this.speedY > 0) {
         this.position_Y -= this.speedY;
         this.speedY -= this.accelaration;
       }
